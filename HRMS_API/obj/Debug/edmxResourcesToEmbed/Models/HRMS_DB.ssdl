@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblClient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CLIENT_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CLIENT_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CLIENT_DESC" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="CREATEDBY" Type="int" />
+    <Property Name="CREATEDON" Type="datetime" />
+    <Property Name="UPDATEDBY" Type="int" />
+    <Property Name="UPDATEDON" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDesignation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESIGNATION" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESIGNATION_CODE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CREATEDBY" Type="int" />
+    <Property Name="CREATEDON" Type="datetime" />
+    <Property Name="UPDATEDBY" Type="int" />
+    <Property Name="UPDATEDON" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEmployees">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="USER_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMP_ID" Type="int" Nullable="false" />
+    <Property Name="JOINING_DATE" Type="date" Nullable="false" />
+    <Property Name="COMPANY" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DESIGNATION" Type="int" Nullable="false" />
+    <Property Name="PHONE_NUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="CREATEDBY" Type="int" />
+    <Property Name="CREATEDON" Type="datetime" />
+    <Property Name="UPDATEDBY" Type="int" />
+    <Property Name="UPDATEDON" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblHoliday">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HOLIDAY_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HOLIDAY_TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HOLIDAY_DATE" Type="datetime" Nullable="false" />
+    <Property Name="HOLIDAY_DAY" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="HOLIDAY_DESC" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="CREATEDBY" Type="int" />
+    <Property Name="CREATEDON" Type="datetime" />
+    <Property Name="UPDATEDBY" Type="int" />
+    <Property Name="UPDATEDON" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblProject">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROJECT_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PROJECT_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CLIENT" Type="int" Nullable="false" />
+    <Property Name="PROJECT_DESC" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="PRIORITY" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CREATEDBY" Type="int" />
+    <Property Name="CREATEDON" Type="datetime" />
+    <Property Name="UPDATEDBY" Type="int" />
+    <Property Name="UPDATEDON" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblTask">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TASK_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TASK_SUMMARY" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TASK_DESC" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="TASK_TYPE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PRIORITY" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PROJECT_ID" Type="int" Nullable="false" />
+    <Property Name="ESTIMATED_HOURS" Type="int" Nullable="false" />
+    <Property Name="START_DATE" Type="datetime" Nullable="false" />
+    <Property Name="END_DATE" Type="datetime" Nullable="false" />
+    <Property Name="DUE_DATE" Type="datetime" Nullable="false" />
+    <Property Name="ASSIGNED_EMP" Type="int" Nullable="false" />
+    <Property Name="CREATEDBY" Type="int" />
+    <Property Name="CREATEDON" Type="datetime" />
+    <Property Name="UPDATEDBY" Type="int" />
+    <Property Name="UPDATEDON" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblTaskHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TASK_COMMENTS" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="TASK_ID" Type="int" Nullable="false" />
+    <Property Name="CREATEDBY" Type="int" />
+    <Property Name="CREATEDON" Type="datetime" />
+    <Property Name="UPDATEDBY" Type="int" />
+    <Property Name="UPDATEDON" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUserMaster">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL_ID" Type="varchar" MaxLength="50" />
+    <Property Name="MOBILE_NUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="USER_IMAGE" Type="varchar" MaxLength="50" />
+    <Property Name="CREATEDBY" Type="int" />
+    <Property Name="CREATEDON" Type="datetime" />
+    <Property Name="UPDATEDBY" Type="int" />
+    <Property Name="UPDATEDON" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AssignedEmp">
+    <End Role="tblEmployees" Type="Self.tblEmployees" Multiplicity="1" />
+    <End Role="tblTask" Type="Self.tblTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEmployees">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblTask">
+        <PropertyRef Name="ASSIGNED_EMP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client">
+    <End Role="tblClient" Type="Self.tblClient" Multiplicity="1" />
+    <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblClient">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblProject">
+        <PropertyRef Name="CLIENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Designation">
+    <End Role="tblDesignation" Type="Self.tblDesignation" Multiplicity="1" />
+    <End Role="tblEmployees" Type="Self.tblEmployees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDesignation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblEmployees">
+        <PropertyRef Name="DESIGNATION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project">
+    <End Role="tblProject" Type="Self.tblProject" Multiplicity="1" />
+    <End Role="tblTask" Type="Self.tblTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProject">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblTask">
+        <PropertyRef Name="PROJECT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task">
+    <End Role="tblTask" Type="Self.tblTask" Multiplicity="1" />
+    <End Role="tblTaskHistory" Type="Self.tblTaskHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTask">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblTaskHistory">
+        <PropertyRef Name="TASK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HRMSModelStoreContainer">
+    <EntitySet Name="tblClient" EntityType="Self.tblClient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDesignation" EntityType="Self.tblDesignation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployees" EntityType="Self.tblEmployees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHoliday" EntityType="Self.tblHoliday" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblProject" EntityType="Self.tblProject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTask" EntityType="Self.tblTask" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTaskHistory" EntityType="Self.tblTaskHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserMaster" EntityType="Self.tblUserMaster" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AssignedEmp" Association="Self.FK_AssignedEmp">
+      <End Role="tblEmployees" EntitySet="tblEmployees" />
+      <End Role="tblTask" EntitySet="tblTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client" Association="Self.FK_Client">
+      <End Role="tblClient" EntitySet="tblClient" />
+      <End Role="tblProject" EntitySet="tblProject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Designation" Association="Self.FK_Designation">
+      <End Role="tblDesignation" EntitySet="tblDesignation" />
+      <End Role="tblEmployees" EntitySet="tblEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project" Association="Self.FK_Project">
+      <End Role="tblProject" EntitySet="tblProject" />
+      <End Role="tblTask" EntitySet="tblTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task" Association="Self.FK_Task">
+      <End Role="tblTask" EntitySet="tblTask" />
+      <End Role="tblTaskHistory" EntitySet="tblTaskHistory" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

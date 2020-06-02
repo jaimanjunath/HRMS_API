@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRMSModelStoreContainer" CdmEntityContainer="HRMSEntities">
+    <EntitySetMapping Name="tblClients">
+      <EntityTypeMapping TypeName="HRMSModel.tblClient">
+        <MappingFragment StoreEntitySet="tblClient">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_DESC" ColumnName="CLIENT_DESC" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDesignations">
+      <EntityTypeMapping TypeName="HRMSModel.tblDesignation">
+        <MappingFragment StoreEntitySet="tblDesignation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="DESIGNATION_CODE" ColumnName="DESIGNATION_CODE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHolidays">
+      <EntityTypeMapping TypeName="HRMSModel.tblHoliday">
+        <MappingFragment StoreEntitySet="tblHoliday">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HOLIDAY_NAME" ColumnName="HOLIDAY_NAME" />
+          <ScalarProperty Name="HOLIDAY_TYPE" ColumnName="HOLIDAY_TYPE" />
+          <ScalarProperty Name="HOLIDAY_DATE" ColumnName="HOLIDAY_DATE" />
+          <ScalarProperty Name="HOLIDAY_DAY" ColumnName="HOLIDAY_DAY" />
+          <ScalarProperty Name="HOLIDAY_DESC" ColumnName="HOLIDAY_DESC" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProjects">
+      <EntityTypeMapping TypeName="HRMSModel.tblProject">
+        <MappingFragment StoreEntitySet="tblProject">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROJECT_ID" ColumnName="PROJECT_ID" />
+          <ScalarProperty Name="PROJECT_NAME" ColumnName="PROJECT_NAME" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="PROJECT_DESC" ColumnName="PROJECT_DESC" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTasks">
+      <EntityTypeMapping TypeName="HRMSModel.tblTask">
+        <MappingFragment StoreEntitySet="tblTask">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TASK_ID" ColumnName="TASK_ID" />
+          <ScalarProperty Name="TASK_SUMMARY" ColumnName="TASK_SUMMARY" />
+          <ScalarProperty Name="TASK_DESC" ColumnName="TASK_DESC" />
+          <ScalarProperty Name="TASK_TYPE" ColumnName="TASK_TYPE" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="PROJECT_ID" ColumnName="PROJECT_ID" />
+          <ScalarProperty Name="ESTIMATED_HOURS" ColumnName="ESTIMATED_HOURS" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="DUE_DATE" ColumnName="DUE_DATE" />
+          <ScalarProperty Name="ASSIGNED_EMP" ColumnName="ASSIGNED_EMP" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTaskHistories">
+      <EntityTypeMapping TypeName="HRMSModel.tblTaskHistory">
+        <MappingFragment StoreEntitySet="tblTaskHistory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TASK_COMMENTS" ColumnName="TASK_COMMENTS" />
+          <ScalarProperty Name="TASK_ID" ColumnName="TASK_ID" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserMasters">
+      <EntityTypeMapping TypeName="HRMSModel.tblUserMaster">
+        <MappingFragment StoreEntitySet="tblUserMaster">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+          <ScalarProperty Name="MOBILE_NUMBER" ColumnName="MOBILE_NUMBER" />
+          <ScalarProperty Name="USER_IMAGE" ColumnName="USER_IMAGE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmployees">
+      <EntityTypeMapping TypeName="HRMSModel.tblEmployee">
+        <MappingFragment StoreEntitySet="tblEmployees">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+          <ScalarProperty Name="JOINING_DATE" ColumnName="JOINING_DATE" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
