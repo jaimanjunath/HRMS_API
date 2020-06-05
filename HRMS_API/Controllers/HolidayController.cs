@@ -32,6 +32,7 @@ namespace HRMS_API.Controllers
                 return BadRequest();
             }
             db.Entry(holiday).State = EntityState.Modified;
+            holiday.HOLIDAY_DAY = holiday.HOLIDAY_DATE.DayOfWeek.ToString();
             try
             {
                 db.SaveChanges();
@@ -58,12 +59,16 @@ namespace HRMS_API.Controllers
         [ResponseType(typeof(tblHoliday))]
         public IHttpActionResult PostHolidays(tblHoliday holiday)
         {
+           
+           holiday.HOLIDAY_DAY = holiday.HOLIDAY_DATE.DayOfWeek.ToString();
+           
 
             db.tblHolidays.Add(holiday);
             db.SaveChanges();
             return CreatedAtRoute("DefaultApi", new { id = holiday.ID }, holiday);
         }
-        
+
+
         [ResponseType(typeof(tblHoliday))]
         public IHttpActionResult DeleteHoliday(int id)
         {

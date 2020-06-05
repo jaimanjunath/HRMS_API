@@ -170,7 +170,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ClientController.cs" />
-    <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HolidayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -198,9 +197,6 @@
       <DependentUpon>HRMS_DB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\tblClient.cs">
-      <DependentUpon>HRMS_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblDesignation.cs">
       <DependentUpon>HRMS_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblEmployee.cs">

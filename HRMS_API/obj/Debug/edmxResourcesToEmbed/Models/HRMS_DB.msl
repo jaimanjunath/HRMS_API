@@ -16,20 +16,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tblDesignations">
-      <EntityTypeMapping TypeName="HRMSModel.tblDesignation">
-        <MappingFragment StoreEntitySet="tblDesignation">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
-          <ScalarProperty Name="DESIGNATION_CODE" ColumnName="DESIGNATION_CODE" />
-          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
-          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
-          <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
-          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
-          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tblHolidays">
       <EntityTypeMapping TypeName="HRMSModel.tblHoliday">
         <MappingFragment StoreEntitySet="tblHoliday">
@@ -121,15 +107,13 @@
     <EntitySetMapping Name="tblEmployees">
       <EntityTypeMapping TypeName="HRMSModel.tblEmployee">
         <MappingFragment StoreEntitySet="tblEmployees">
+          <ScalarProperty Name="ROLE" ColumnName="ROLE" />
           <ScalarProperty Name="STATUS" ColumnName="STATUS" />
           <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
           <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
           <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
           <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
           <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
-          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
-          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
-          <ScalarProperty Name="JOINING_DATE" ColumnName="JOINING_DATE" />
           <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
           <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
           <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />

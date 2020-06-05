@@ -15,20 +15,6 @@
     <Property Name="STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="tblProjects" Relationship="Self.FK_Client" FromRole="tblClient" ToRole="tblProject" />
   </EntityType>
-  <EntityType Name="tblDesignation">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DESIGNATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="DESIGNATION_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CREATEDBY" Type="Int32" />
-    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
-    <Property Name="UPDATEDBY" Type="Int32" />
-    <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
-    <Property Name="STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="tblEmployees" Relationship="HRMSModel.FK_Designation" FromRole="tblDesignation" ToRole="tblEmployee" />
-  </EntityType>
   <EntityType Name="tblHoliday">
     <Key>
       <PropertyRef Name="ID" />
@@ -156,7 +142,6 @@
   </Association>
   <EntityContainer Name="HRMSEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tblClients" EntityType="Self.tblClient" />
-    <EntitySet Name="tblDesignations" EntityType="Self.tblDesignation" />
     <EntitySet Name="tblHolidays" EntityType="Self.tblHoliday" />
     <EntitySet Name="tblProjects" EntityType="Self.tblProject" />
     <EntitySet Name="tblTasks" EntityType="Self.tblTask" />
@@ -175,10 +160,6 @@
       <End Role="tblTaskHistory" EntitySet="tblTaskHistories" />
     </AssociationSet>
     <EntitySet Name="tblEmployees" EntityType="HRMSModel.tblEmployee" />
-    <AssociationSet Name="FK_Designation" Association="HRMSModel.FK_Designation">
-      <End Role="tblDesignation" EntitySet="tblDesignations" />
-      <End Role="tblEmployee" EntitySet="tblEmployees" />
-    </AssociationSet>
     <AssociationSet Name="FK_AssignedEmp" Association="HRMSModel.FK_AssignedEmp">
       <End Role="tblEmployee" EntitySet="tblEmployees" />
       <End Role="tblTask" EntitySet="tblTasks" />
@@ -195,30 +176,15 @@
     <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="EMP_ID" Type="Int32" Nullable="false" />
-    <Property Name="JOINING_DATE" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="COMPANY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="DESIGNATION" Type="Int32" Nullable="false" />
     <Property Name="PHONE_NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CREATEDBY" Type="Int32" />
     <Property Name="CREATEDON" Type="DateTime" Precision="3" />
     <Property Name="UPDATEDBY" Type="Int32" />
     <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
     <Property Name="STATUS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tblDesignation" Relationship="HRMSModel.FK_Designation" FromRole="tblEmployee" ToRole="tblDesignation" />
+    <Property Name="ROLE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="tblTasks" Relationship="HRMSModel.FK_AssignedEmp" FromRole="tblEmployee" ToRole="tblTask" />
   </EntityType>
-  <Association Name="FK_Designation">
-    <End Type="HRMSModel.tblDesignation" Role="tblDesignation" Multiplicity="1" />
-    <End Type="HRMSModel.tblEmployee" Role="tblEmployee" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblDesignation">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="tblEmployee">
-        <PropertyRef Name="DESIGNATION" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_AssignedEmp">
     <End Type="HRMSModel.tblEmployee" Role="tblEmployee" Multiplicity="1" />
     <End Type="HRMSModel.tblTask" Role="tblTask" Multiplicity="*" />

@@ -14,19 +14,6 @@
     <Property Name="UPDATEDON" Type="datetime" />
     <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
-  <EntityType Name="tblDesignation">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DESIGNATION" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="DESIGNATION_CODE" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="CREATEDBY" Type="int" />
-    <Property Name="CREATEDON" Type="datetime" />
-    <Property Name="UPDATEDBY" Type="int" />
-    <Property Name="UPDATEDON" Type="datetime" />
-    <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
-  </EntityType>
   <EntityType Name="tblEmployees">
     <Key>
       <PropertyRef Name="ID" />
@@ -38,15 +25,13 @@
     <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="EMP_ID" Type="int" Nullable="false" />
-    <Property Name="JOINING_DATE" Type="date" Nullable="false" />
-    <Property Name="COMPANY" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="DESIGNATION" Type="int" Nullable="false" />
     <Property Name="PHONE_NUMBER" Type="varchar" MaxLength="50" />
     <Property Name="CREATEDBY" Type="int" />
     <Property Name="CREATEDON" Type="datetime" />
     <Property Name="UPDATEDBY" Type="int" />
     <Property Name="UPDATEDON" Type="datetime" />
     <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ROLE" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="tblHoliday">
     <Key>
@@ -155,18 +140,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Designation">
-    <End Role="tblDesignation" Type="Self.tblDesignation" Multiplicity="1" />
-    <End Role="tblEmployees" Type="Self.tblEmployees" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblDesignation">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="tblEmployees">
-        <PropertyRef Name="DESIGNATION" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Project">
     <End Role="tblProject" Type="Self.tblProject" Multiplicity="1" />
     <End Role="tblTask" Type="Self.tblTask" Multiplicity="*" />
@@ -193,7 +166,6 @@
   </Association>
   <EntityContainer Name="HRMSModelStoreContainer">
     <EntitySet Name="tblClient" EntityType="Self.tblClient" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblDesignation" EntityType="Self.tblDesignation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblEmployees" EntityType="Self.tblEmployees" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblHoliday" EntityType="Self.tblHoliday" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblProject" EntityType="Self.tblProject" Schema="dbo" store:Type="Tables" />
@@ -207,10 +179,6 @@
     <AssociationSet Name="FK_Client" Association="Self.FK_Client">
       <End Role="tblClient" EntitySet="tblClient" />
       <End Role="tblProject" EntitySet="tblProject" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Designation" Association="Self.FK_Designation">
-      <End Role="tblDesignation" EntitySet="tblDesignation" />
-      <End Role="tblEmployees" EntitySet="tblEmployees" />
     </AssociationSet>
     <AssociationSet Name="FK_Project" Association="Self.FK_Project">
       <End Role="tblProject" EntitySet="tblProject" />

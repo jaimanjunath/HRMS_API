@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="414a7f3b6a434e0ca8d17e2b5f5a6901" Name="Diagram1" ZoomLevel="93">
         <EntityTypeShape EntityType="HRMSModel.tblClient" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.tblDesignation" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HRMSModel.tblHoliday" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HRMSModel.tblProject" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HRMSModel.tblTask" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
@@ -15,10 +14,9 @@
         <AssociationConnector Association="HRMSModel.FK_Client" ManuallyRouted="false" />
         <AssociationConnector Association="HRMSModel.FK_Project" ManuallyRouted="false" />
         <AssociationConnector Association="HRMSModel.FK_Task" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="HRMSModel.tblEmployee" Width="1.5" PointX="3" PointY="1.25" />
-        <AssociationConnector Association="HRMSModel.FK_Designation" />
+        <EntityTypeShape EntityType="HRMSModel.tblEmployee" Width="1.5" PointX="8.375" PointY="10" />
         <AssociationConnector Association="HRMSModel.FK_AssignedEmp" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

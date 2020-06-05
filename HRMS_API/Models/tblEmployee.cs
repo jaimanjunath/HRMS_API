@@ -19,7 +19,7 @@ namespace HRMS_API.Models
         {
             this.tblTasks = new HashSet<tblTask>();
         }
-     
+    
         public int ID { get; set; }
         public string FIRST_NAME { get; set; }
         public string LAST_NAME { get; set; }
@@ -27,17 +27,14 @@ namespace HRMS_API.Models
         public string EMAIL { get; set; }
         public string PASSWORD { get; set; }
         public int EMP_ID { get; set; }
-        public System.DateTime JOINING_DATE { get; set; }
-        public string COMPANY { get; set; }
-        public int DESIGNATION { get; set; }
         public string PHONE_NUMBER { get; set; }
         public Nullable<int> CREATEDBY { get; set; }
         public Nullable<System.DateTime> CREATEDON { get; set; }
         public Nullable<int> UPDATEDBY { get; set; }
         public Nullable<System.DateTime> UPDATEDON { get; set; }
         public string STATUS { get; set; }
+        public string ROLE { get; set; }
     
-        public virtual tblDesignation tblDesignation { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTask> tblTasks { get; set; }
     }

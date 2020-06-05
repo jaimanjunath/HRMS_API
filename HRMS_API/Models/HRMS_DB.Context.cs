@@ -26,7 +26,6 @@ namespace HRMS_API.Models
         }
     
         public virtual DbSet<tblClient> tblClients { get; set; }
-        public virtual DbSet<tblDesignation> tblDesignations { get; set; }
         public virtual DbSet<tblHoliday> tblHolidays { get; set; }
         public virtual DbSet<tblProject> tblProjects { get; set; }
         public virtual DbSet<tblTask> tblTasks { get; set; }
