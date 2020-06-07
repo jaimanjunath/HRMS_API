@@ -62,8 +62,8 @@
     <Property Name="PROJECT_ID" Type="Int32" Nullable="false" />
     <Property Name="ESTIMATED_HOURS" Type="Int32" Nullable="false" />
     <Property Name="START_DATE" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="END_DATE" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="DUE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="END_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DUE_DATE" Type="DateTime" Precision="3" />
     <Property Name="ASSIGNED_EMP" Type="Int32" Nullable="false" />
     <Property Name="CREATEDBY" Type="Int32" />
     <Property Name="CREATEDON" Type="DateTime" Precision="3" />

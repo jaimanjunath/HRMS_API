@@ -83,9 +83,9 @@
           <Property Name="PROJECT_ID" Type="int" Nullable="false" />
           <Property Name="ESTIMATED_HOURS" Type="int" Nullable="false" />
           <Property Name="START_DATE" Type="datetime" Nullable="false" />
-          <Property Name="END_DATE" Type="datetime" Nullable="false" />
-          <Property Name="DUE_DATE" Type="datetime" Nullable="false" />
           <Property Name="ASSIGNED_EMP" Type="int" Nullable="false" />
+          <Property Name="END_DATE" Type="datetime" />
+          <Property Name="DUE_DATE" Type="datetime" />
           <Property Name="CREATEDBY" Type="int" />
           <Property Name="CREATEDON" Type="datetime" />
           <Property Name="UPDATEDBY" Type="int" />
@@ -260,8 +260,8 @@
           <Property Name="PROJECT_ID" Type="Int32" Nullable="false" />
           <Property Name="ESTIMATED_HOURS" Type="Int32" Nullable="false" />
           <Property Name="START_DATE" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="END_DATE" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DUE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="END_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DUE_DATE" Type="DateTime" Precision="3" />
           <Property Name="ASSIGNED_EMP" Type="Int32" Nullable="false" />
           <Property Name="CREATEDBY" Type="Int32" />
           <Property Name="CREATEDON" Type="DateTime" Precision="3" />

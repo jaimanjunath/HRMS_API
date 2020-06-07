@@ -1,3 +1,4 @@
+E:\projects\P1\code\HRMS_API\HRMS_API\obj\Debug\HRMS_API.csproj.CoreCompileInputs.cache
 E:\projects\P1\code\HRMS_API\HRMS_API\bin\HRMS_API.dll.config
 E:\projects\P1\code\HRMS_API\HRMS_API\bin\HRMS_API.dll
 E:\projects\P1\code\HRMS_API\HRMS_API\bin\HRMS_API.pdb
@@ -82,8 +83,7 @@ E:\projects\P1\code\HRMS_API\HRMS_API\bin\System.Web.WebPages.Deployment.xml
 E:\projects\P1\code\HRMS_API\HRMS_API\bin\System.Web.WebPages.Razor.xml
 E:\projects\P1\code\HRMS_API\HRMS_API\bin\Antlr3.Runtime.pdb
 E:\projects\P1\code\HRMS_API\HRMS_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\projects\P1\code\HRMS_API\HRMS_API\obj\Debug\HRMS_API.csprojAssemblyReference.cache
-E:\projects\P1\code\HRMS_API\HRMS_API\obj\Debug\HRMS_API.csproj.CoreCompileInputs.cache
 E:\projects\P1\code\HRMS_API\HRMS_API\obj\Debug\HRMS_API.csproj.CopyComplete
 E:\projects\P1\code\HRMS_API\HRMS_API\obj\Debug\HRMS_API.dll
 E:\projects\P1\code\HRMS_API\HRMS_API\obj\Debug\HRMS_API.pdb
+E:\projects\P1\code\HRMS_API\HRMS_API\obj\Debug\HRMS_API.csprojAssemblyReference.cache

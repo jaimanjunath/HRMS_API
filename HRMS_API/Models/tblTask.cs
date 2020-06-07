@@ -29,8 +29,8 @@ namespace HRMS_API.Models
         public int PROJECT_ID { get; set; }
         public int ESTIMATED_HOURS { get; set; }
         public System.DateTime START_DATE { get; set; }
-        public System.DateTime END_DATE { get; set; }
-        public System.DateTime DUE_DATE { get; set; }
+        public Nullable<System.DateTime> END_DATE { get; set; }
+        public Nullable<System.DateTime> DUE_DATE { get; set; }
         public int ASSIGNED_EMP { get; set; }
         public Nullable<int> CREATEDBY { get; set; }
         public Nullable<System.DateTime> CREATEDON { get; set; }
