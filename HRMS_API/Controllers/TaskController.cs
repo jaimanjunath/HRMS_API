@@ -53,9 +53,9 @@ namespace HRMS_API.Controllers
 
         // PUT: api/ColorTemplate/5
         [System.Web.Http.Description.ResponseType(typeof(void))]
-        public IHttpActionResult PutTask(string task_id, tblTask task)
+        public IHttpActionResult PutTask(int id, tblTask task)
         {
-            if (task_id != task.TASK_ID)
+            if (id != task.ID)
             {
                 return BadRequest();
             }
@@ -66,7 +66,7 @@ namespace HRMS_API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TaskExists(task_id))
+                if (!TaskExists(id))
                 {
                     return NotFound();
                 }
@@ -78,9 +78,9 @@ namespace HRMS_API.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-        private bool TaskExists(string task_id)
+        private bool TaskExists(int id)
         {
-            return db.tblTasks.Count(e => e.TASK_ID == task_id) > 0;
+            return db.tblTasks.Count(e => e.ID == id) > 0;
         }
         // POST: api/ColorTemplate
         [ResponseType(typeof(tblTask))]
