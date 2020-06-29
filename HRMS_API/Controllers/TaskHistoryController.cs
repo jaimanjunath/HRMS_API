@@ -22,6 +22,10 @@ namespace HRMS_API.Controllers
         {
             return db.tblTaskHistories.AsQueryable();
         }
+        public IQueryable<tblTaskHistory> GetTaskHistory(int taskid)
+        {
+            return db.tblTaskHistories.Where(e => e.TASK_ID == taskid).AsQueryable();
+        }
 
         // PUT: api/ColorTemplate/5
         [System.Web.Http.Description.ResponseType(typeof(void))]
@@ -56,7 +60,7 @@ namespace HRMS_API.Controllers
         }
         // POST: api/ColorTemplate
         [ResponseType(typeof(tblTask))]
-        public IHttpActionResult PostProject(tblTaskHistory taskHistory)
+        public IHttpActionResult PostTaskHistory(tblTaskHistory taskHistory)
         {
 
             db.tblTaskHistories.Add(taskHistory);
