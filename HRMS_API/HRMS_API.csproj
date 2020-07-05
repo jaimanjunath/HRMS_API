@@ -196,6 +196,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HRMS_DB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\TaskHistory.cs" />
     <Compile Include="Models\Tasks.cs" />
     <Compile Include="Models\tblClient.cs">
       <DependentUpon>HRMS_DB.tt</DependentUpon>
@@ -218,6 +219,7 @@
     <Compile Include="Models\tblUserMaster.cs">
       <DependentUpon>HRMS_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -23,6 +23,28 @@ namespace HRMS_API.Controllers
         {
             return db.tblEmployees.AsQueryable();
         }
+        [HttpGet]
+        [ActionName("GetUser")]
+        public IQueryable<User> GetUser(string username, string  pwd)
+        {
+            IQueryable<User> user = from e in db.tblEmployees
+                                    where (e.EMAIL.Equals(username) && e.PASSWORD.Equals(pwd))
+                                    select new User
+                                    {
+                                        ID = e.ID,
+                                        FIRST_NAME = e.FIRST_NAME,
+                                        LAST_NAME = e.LAST_NAME,
+                                        USER_NAME = e.USER_NAME,
+                                        EMAIL = e.EMAIL,
+                                        PASSWORD = e.PASSWORD,
+                                        EMP_ID = e.EMP_ID,
+                                        PHONE_NUMBER = e.PHONE_NUMBER,
+                                        STATUS = e.STATUS,
+                                        ROLE = e.ROLE
+                                    };
+            return user;
+            //return db.tblEmployees.AsQueryable();
+        }
 
         //// GET: api/UserMaster
         //public List<tblEmployee> GetEmployee()
@@ -38,7 +60,7 @@ namespace HRMS_API.Controllers
         //        {
         //            return emps;
         //        }
-              
+
         //    }
         //}
 

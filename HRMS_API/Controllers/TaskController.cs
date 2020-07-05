@@ -50,6 +50,39 @@ namespace HRMS_API.Controllers
             return task;
 
         }
+        public IQueryable<Tasks> GetTask(int empid)
+        {
+
+            IQueryable<Tasks> task = from t in db.tblTasks
+                                     join p in db.tblProjects on t.PROJECT_ID equals p.ID
+                                     join e in db.tblEmployees on t.ASSIGNED_EMP equals e.ID
+                                     where e.ID.Equals(empid)
+                                     select new
+                                     Tasks
+                                     {
+                                         ID = t.ID,
+                                         TASK_ID = t.TASK_ID,
+                                         TASK_SUMMARY = t.TASK_SUMMARY,
+                                         TASK_DESC = t.TASK_DESC,
+                                         TASK_TYPE = t.TASK_TYPE,
+                                         PRIORITY = t.PRIORITY,
+                                         PROJECT_ID = t.PROJECT_ID,
+                                         PROJECT = p.PROJECT_NAME,
+                                         ESTIMATED_HOURS = t.ESTIMATED_HOURS,
+                                         START_DATE = t.START_DATE,
+                                         END_DATE = t.END_DATE,
+                                         DUE_DATE = t.DUE_DATE,
+                                         ASSIGNED_EMP = t.ASSIGNED_EMP,
+                                         ASSIGNED = e.USER_NAME,
+                                         CREATEDBY = t.CREATEDBY,
+                                         CREATEDON = t.CREATEDON,
+                                         UPDATEDBY = t.UPDATEDBY,
+                                         UPDATEDON = t.UPDATEDON,
+                                         STATUS = t.STATUS
+                                     };
+            return task;
+
+        }
 
         // PUT: api/ColorTemplate/5
         [System.Web.Http.Description.ResponseType(typeof(void))]

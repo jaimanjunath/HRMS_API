@@ -18,13 +18,47 @@ namespace HRMS_API.Controllers
 
 
         // GET: api/UserMaster
-        public IQueryable<tblTaskHistory> GetTaskHistory()
+        public IQueryable<TaskHistory> GetTaskHistory()
         {
-            return db.tblTaskHistories.AsQueryable();
+
+            IQueryable<TaskHistory> taskHistorylist = from t in db.tblTaskHistories
+                                                      join e in db.tblEmployees on t.CREATEDBY equals e.ID 
+                                                      select new TaskHistory
+                                                      {
+                                                          ID = t.ID,
+                                                          TASK_COMMENTS = t.TASK_COMMENTS,
+                                                          TASK_ID = t.TASK_ID,
+                                                          CREATEDBY = t.CREATEDBY,
+                                                          CREATEDBY_NAME = e.USER_NAME,
+                                                          CREATEDON = t.CREATEDON,
+                                                          UPDATEDBY = t.UPDATEDBY,
+                                                          UPDATEDBY_NAME = e.USER_NAME,
+                                                          UPDATEDON = t.UPDATEDON,
+                                                          STATUS = t.STATUS                                                      
+                                                      };
+            //return db.tblTaskHistories.AsQueryable();
+            return taskHistorylist;
         }
-        public IQueryable<tblTaskHistory> GetTaskHistory(int taskid)
+        public IQueryable<TaskHistory> GetTaskHistory(int taskid)
         {
-            return db.tblTaskHistories.Where(e => e.TASK_ID == taskid).AsQueryable();
+            //return db.tblTaskHistories.Where(e => e.TASK_ID == taskid).AsQueryable();
+            IQueryable<TaskHistory> taskHistorylist = from t in db.tblTaskHistories
+                                                      join e in db.tblEmployees on t.CREATEDBY equals e.ID where t.TASK_ID.Equals(taskid)
+                                                      orderby t.CREATEDON descending
+                                                      select new TaskHistory
+                                                      {
+                                                          ID = t.ID,
+                                                          TASK_COMMENTS = t.TASK_COMMENTS,
+                                                          TASK_ID = t.TASK_ID,
+                                                          CREATEDBY = t.CREATEDBY,
+                                                          CREATEDBY_NAME = e.USER_NAME,
+                                                          CREATEDON = t.CREATEDON,
+                                                          UPDATEDBY = t.UPDATEDBY,
+                                                          UPDATEDBY_NAME = e.USER_NAME,
+                                                          UPDATEDON = t.UPDATEDON,
+                                                          STATUS = t.STATUS
+                                                      };            
+            return taskHistorylist;
         }
 
         // PUT: api/ColorTemplate/5
@@ -59,11 +93,20 @@ namespace HRMS_API.Controllers
             return db.tblTaskHistories.Count(e => e.TASK_ID == task_id) > 0;
         }
         // POST: api/ColorTemplate
-        [ResponseType(typeof(tblTask))]
+        [ResponseType(typeof(tblTaskHistory))]
         public IHttpActionResult PostTaskHistory(tblTaskHistory taskHistory)
         {
+            tblTaskHistory objTaskHistory = new tblTaskHistory();
+            objTaskHistory.TASK_COMMENTS = taskHistory.TASK_COMMENTS;
+            objTaskHistory.TASK_ID = taskHistory.TASK_ID;
+            objTaskHistory.CREATEDBY = taskHistory.CREATEDBY;
+            objTaskHistory.CREATEDON = System.DateTime.Now;
+            objTaskHistory.UPDATEDBY = taskHistory.UPDATEDBY;
+            objTaskHistory.UPDATEDON = System.DateTime.Now;
+            objTaskHistory.STATUS = taskHistory.STATUS;
 
-            db.tblTaskHistories.Add(taskHistory);
+
+            db.tblTaskHistories.Add(objTaskHistory);
             db.SaveChanges();
             return CreatedAtRoute("DefaultApi", new { id = taskHistory.ID }, taskHistory);
         }
