@@ -32,6 +32,6 @@ namespace HRMS_API.Models
         public virtual DbSet<tblTaskHistory> tblTaskHistories { get; set; }
         public virtual DbSet<tblUserMaster> tblUserMasters { get; set; }
         public virtual DbSet<tblEmployee> tblEmployees { get; set; }
-
+        public virtual DbSet<tblLeaves> tblLeaves { get; set; }
     }
 }

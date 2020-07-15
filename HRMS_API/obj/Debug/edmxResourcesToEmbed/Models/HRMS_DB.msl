@@ -19,6 +19,7 @@
     <EntitySetMapping Name="tblHolidays">
       <EntityTypeMapping TypeName="HRMSModel.tblHoliday">
         <MappingFragment StoreEntitySet="tblHoliday">
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="HOLIDAY_NAME" ColumnName="HOLIDAY_NAME" />
           <ScalarProperty Name="HOLIDAY_TYPE" ColumnName="HOLIDAY_TYPE" />
@@ -107,6 +108,7 @@
     <EntitySetMapping Name="tblEmployees">
       <EntityTypeMapping TypeName="HRMSModel.tblEmployee">
         <MappingFragment StoreEntitySet="tblEmployees">
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
           <ScalarProperty Name="ROLE" ColumnName="ROLE" />
           <ScalarProperty Name="STATUS" ColumnName="STATUS" />
           <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
@@ -120,6 +122,26 @@
           <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
           <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
           <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLeaves">
+      <EntityTypeMapping TypeName="HRMSModel.tblLeaves">
+        <MappingFragment StoreEntitySet="tblLeaves">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="NUMBER_DAYS" ColumnName="NUMBER_DAYS" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="IS_HALFDAY" ColumnName="IS_HALFDAY" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="LEAVE_STATUS" ColumnName="LEAVE_STATUS" />
+          <ScalarProperty Name="LEAVE_TYPE" ColumnName="LEAVE_TYPE" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

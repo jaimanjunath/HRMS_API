@@ -12,31 +12,21 @@ namespace HRMS_API.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblEmployee
+    public partial class tblLeaves
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblEmployee()
-        {
-            this.tblTasks = new HashSet<tblTask>();
-        }
-    
         public int ID { get; set; }
-        public string FIRST_NAME { get; set; }
-        public string LAST_NAME { get; set; }
-        public string USER_NAME { get; set; }
-        public string EMAIL { get; set; }
-        public string PASSWORD { get; set; }
         public int EMP_ID { get; set; }
-        public string PHONE_NUMBER { get; set; }
+        public string LEAVE_TYPE { get; set; }
+        public string LEAVE_STATUS { get; set; }
+        public System.DateTime START_DATE { get; set; }
+        public System.DateTime END_DATE { get; set; }
+        public string IS_HALFDAY { get; set; }
+        public string REMARK { get; set; }
+        public double NUMBER_DAYS { get; set; }
         public Nullable<int> CREATEDBY { get; set; }
         public Nullable<System.DateTime> CREATEDON { get; set; }
         public Nullable<int> UPDATEDBY { get; set; }
         public Nullable<System.DateTime> UPDATEDON { get; set; }
         public string STATUS { get; set; }
-        public string ROLE { get; set; }
-        public string CITY { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblTask> tblTasks { get; set; }
     }
 }

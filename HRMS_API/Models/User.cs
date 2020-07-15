@@ -17,5 +17,6 @@ namespace HRMS_API.Models
         public string PHONE_NUMBER { get; set; }      
         public string STATUS { get; set; }
         public string ROLE { get; set; }
+        public string CITY { get; set; }
     }
 }

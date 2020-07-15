@@ -22,6 +22,33 @@ namespace HRMS_API.Controllers
         {
             return db.tblHolidays.AsQueryable();
         }
+        public IQueryable<tblHoliday> GetHoliday(int EmpID)
+        {
+            DateTime today = DateTime.Today;
+            IQueryable<tblHoliday> holiday = from h in db.tblHolidays
+                                             join e in db.tblEmployees on h.CITY equals e.CITY
+                                             orderby h.HOLIDAY_DATE ascending, h.CITY
+                                             where e.ID.Equals(EmpID) && h.HOLIDAY_DATE.Year.Equals(today.Year)
+                                             select h;
+                                             //join e in db.tblEmployees on h.CITY equals e.CITY // orderby h.HOLIDAY_DATE ascending //,h.CITY
+                                             //where e.ID.Equals(EmpID) //&& h.HOLIDAY_DATE.Year.Equals(today.Year)
+                                             //select new tblHoliday
+                                             //{
+                                             //    ID = h.ID,
+                                             //    HOLIDAY_NAME = h.HOLIDAY_NAME,
+                                             //    HOLIDAY_TYPE = h.HOLIDAY_TYPE,
+                                             //    HOLIDAY_DATE = h.HOLIDAY_DATE,
+                                             //    HOLIDAY_DAY = h.HOLIDAY_DAY,
+                                             //    HOLIDAY_DESC = h.HOLIDAY_DESC,
+                                             //    CREATEDBY = h.CREATEDBY,
+                                             //    CREATEDON = h.CREATEDON,
+                                             //    UPDATEDBY = h.UPDATEDBY,
+                                             //    UPDATEDON = h.UPDATEDON,
+                                             //    STATUS = h.STATUS,
+                                             //    CITY = h.CITY
+                                             //};
+            return holiday;
+        }
 
         // PUT: api/ColorTemplate/5
         [System.Web.Http.Description.ResponseType(typeof(void))]

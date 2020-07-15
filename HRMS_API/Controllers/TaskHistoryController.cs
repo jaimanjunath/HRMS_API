@@ -22,7 +22,7 @@ namespace HRMS_API.Controllers
         {
 
             IQueryable<TaskHistory> taskHistorylist = from t in db.tblTaskHistories
-                                                      join e in db.tblEmployees on t.CREATEDBY equals e.ID 
+                                                      join e in db.tblEmployees on t.CREATEDBY equals e.ID
                                                       select new TaskHistory
                                                       {
                                                           ID = t.ID,

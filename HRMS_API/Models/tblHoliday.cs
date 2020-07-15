@@ -25,5 +25,6 @@ namespace HRMS_API.Models
         public Nullable<int> UPDATEDBY { get; set; }
         public Nullable<System.DateTime> UPDATEDON { get; set; }
         public string STATUS { get; set; }
+        public string CITY { get; set; }
     }
 }

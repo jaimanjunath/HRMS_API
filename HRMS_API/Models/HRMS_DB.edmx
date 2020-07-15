@@ -37,6 +37,7 @@
           <Property Name="UPDATEDON" Type="datetime" />
           <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="ROLE" Type="varchar" MaxLength="20" />
+          <Property Name="CITY" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblHoliday">
           <Key>
@@ -53,6 +54,26 @@
           <Property Name="UPDATEDBY" Type="int" />
           <Property Name="UPDATEDON" Type="datetime" />
           <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CITY" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblLeaves">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_ID" Type="int" Nullable="false" />
+          <Property Name="LEAVE_TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LEAVE_STATUS" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="START_DATE" Type="datetime" Nullable="false" />
+          <Property Name="END_DATE" Type="datetime" Nullable="false" />
+          <Property Name="IS_HALFDAY" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="REMARK" Type="varchar" MaxLength="250" />
+          <Property Name="NUMBER_DAYS" Type="float" Nullable="false" />
+          <Property Name="CREATEDBY" Type="int" />
+          <Property Name="CREATEDON" Type="datetime" />
+          <Property Name="UPDATEDBY" Type="int" />
+          <Property Name="UPDATEDON" Type="datetime" />
+          <Property Name="STATUS" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="tblProject">
           <Key>
@@ -173,6 +194,7 @@
           <EntitySet Name="tblClient" EntityType="Self.tblClient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblEmployees" EntityType="Self.tblEmployees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblHoliday" EntityType="Self.tblHoliday" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLeaves" EntityType="Self.tblLeaves" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblProject" EntityType="Self.tblProject" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblTask" EntityType="Self.tblTask" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblTaskHistory" EntityType="Self.tblTaskHistory" Schema="dbo" store:Type="Tables" />
@@ -228,6 +250,7 @@
           <Property Name="UPDATEDBY" Type="Int32" />
           <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
           <Property Name="STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tblProject">
           <Key>
@@ -362,6 +385,7 @@
             <End Role="tblEmployee" EntitySet="tblEmployees" />
             <End Role="tblTask" EntitySet="tblTasks" />
           </AssociationSet>
+          <EntitySet Name="tblLeaves" EntityType="HRMSModel.tblLeaves" />
         </EntityContainer>
         <EntityType Name="tblEmployee">
           <Key>
@@ -382,6 +406,7 @@
           <Property Name="STATUS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="ROLE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblTasks" Relationship="HRMSModel.FK_AssignedEmp" FromRole="tblEmployee" ToRole="tblTask" />
+          <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_AssignedEmp">
           <End Type="HRMSModel.tblEmployee" Role="tblEmployee" Multiplicity="1" />
@@ -395,6 +420,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tblLeaves">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
+          <Property Name="LEAVE_TYPE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LEAVE_STATUS" Type="String" Nullable="false" MaxLength="50" FixedLength="false" />
+          <Property Name="START_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="END_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IS_HALFDAY" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="REMARK" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NUMBER_DAYS" Type="Double" Nullable="false" />
+          <Property Name="CREATEDBY" Type="Int32" />
+          <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDBY" Type="Int32" />
+          <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+          <Property Name="STATUS" Type="String" MaxLength="10" FixedLength="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -419,6 +463,7 @@
           <EntitySetMapping Name="tblHolidays">
             <EntityTypeMapping TypeName="HRMSModel.tblHoliday">
               <MappingFragment StoreEntitySet="tblHoliday">
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="HOLIDAY_NAME" ColumnName="HOLIDAY_NAME" />
                 <ScalarProperty Name="HOLIDAY_TYPE" ColumnName="HOLIDAY_TYPE" />
@@ -507,6 +552,7 @@
           <EntitySetMapping Name="tblEmployees">
             <EntityTypeMapping TypeName="HRMSModel.tblEmployee">
               <MappingFragment StoreEntitySet="tblEmployees">
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
                 <ScalarProperty Name="ROLE" ColumnName="ROLE" />
                 <ScalarProperty Name="STATUS" ColumnName="STATUS" />
                 <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
@@ -520,6 +566,26 @@
                 <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
                 <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
                 <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLeaves">
+            <EntityTypeMapping TypeName="HRMSModel.tblLeaves">
+              <MappingFragment StoreEntitySet="tblLeaves">
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+                <ScalarProperty Name="UPDATEDBY" ColumnName="UPDATEDBY" />
+                <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="NUMBER_DAYS" ColumnName="NUMBER_DAYS" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="IS_HALFDAY" ColumnName="IS_HALFDAY" />
+                <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+                <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+                <ScalarProperty Name="LEAVE_STATUS" ColumnName="LEAVE_STATUS" />
+                <ScalarProperty Name="LEAVE_TYPE" ColumnName="LEAVE_TYPE" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

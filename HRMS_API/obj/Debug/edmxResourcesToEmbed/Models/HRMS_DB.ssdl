@@ -32,6 +32,7 @@
     <Property Name="UPDATEDON" Type="datetime" />
     <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="ROLE" Type="varchar" MaxLength="20" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tblHoliday">
     <Key>
@@ -48,6 +49,26 @@
     <Property Name="UPDATEDBY" Type="int" />
     <Property Name="UPDATEDON" Type="datetime" />
     <Property Name="STATUS" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblLeaves">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMP_ID" Type="int" Nullable="false" />
+    <Property Name="LEAVE_TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LEAVE_STATUS" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="START_DATE" Type="datetime" Nullable="false" />
+    <Property Name="END_DATE" Type="datetime" Nullable="false" />
+    <Property Name="IS_HALFDAY" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="REMARK" Type="varchar" MaxLength="250" />
+    <Property Name="NUMBER_DAYS" Type="float" Nullable="false" />
+    <Property Name="CREATEDBY" Type="int" />
+    <Property Name="CREATEDON" Type="datetime" />
+    <Property Name="UPDATEDBY" Type="int" />
+    <Property Name="UPDATEDON" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="tblProject">
     <Key>
@@ -168,6 +189,7 @@
     <EntitySet Name="tblClient" EntityType="Self.tblClient" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblEmployees" EntityType="Self.tblEmployees" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblHoliday" EntityType="Self.tblHoliday" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLeaves" EntityType="Self.tblLeaves" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblProject" EntityType="Self.tblProject" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblTask" EntityType="Self.tblTask" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblTaskHistory" EntityType="Self.tblTaskHistory" Schema="dbo" store:Type="Tables" />

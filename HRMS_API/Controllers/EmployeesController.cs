@@ -40,6 +40,7 @@ namespace HRMS_API.Controllers
                                         EMP_ID = e.EMP_ID,
                                         PHONE_NUMBER = e.PHONE_NUMBER,
                                         STATUS = e.STATUS,
+                                        CITY = e.CITY,
                                         ROLE = e.ROLE
                                     };
             return user;
