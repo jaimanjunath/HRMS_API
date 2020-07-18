@@ -80,6 +80,7 @@ namespace HRMS_API.Controllers
         [ResponseType(typeof(tblLeaves))]
         public IHttpActionResult PostLeave(tblLeaves leave)
         {
+            leave.CREATEDON = DateTime.Now;
 
             db.tblLeaves.Add(leave);
             db.SaveChanges();
